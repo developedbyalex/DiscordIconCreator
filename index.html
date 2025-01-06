@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Role Icon Maker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Discord Role Icon Maker</h1>
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <label>Background Shape</label>
+                <select id="shape">
+                    <option value="circle">Circle</option>
+                    <option value="square">Square</option>
+                    <option value="triangle">Triangle</option>
+                </select>
+            </div>
+
+            <div class="control-group">
+                <label>Background Style</label>
+                <div class="style-toggle">
+                    <input type="checkbox" id="bgGradientToggle">
+                    <label for="bgGradientToggle">Use Gradient</label>
+                </div>
+                
+                <div id="bgSolidControls">
+                    <label>Solid Color</label>
+                    <input type="color" id="bgColor" value="#5865f2">
+                </div>
+
+                <div id="bgGradientControls" style="display: none;">
+                    <label>Gradient Colors</label>
+                    <div class="gradient-controls">
+                        <input type="color" id="bgColorStart" value="#5865f2">
+                        <input type="color" id="bgColorEnd" value="#4752c4">
+                        <select id="gradientDirection">
+                            <option value="to right">Horizontal</option>
+                            <option value="to bottom">Vertical</option>
+                            <option value="to bottom right">Diagonal</option>
+                            <option value="circle">Radial</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Icon Style</label>
+                <div class="style-toggle">
+                    <input type="checkbox" id="iconGradientToggle">
+                    <label for="iconGradientToggle">Use Gradient</label>
+                </div>
+
+                <div id="iconSolidControls">
+                    <label>Solid Color</label>
+                    <input type="color" id="iconColor" value="#ffffff">
+                </div>
+
+                <div id="iconGradientControls" style="display: none;">
+                    <label>Gradient Colors</label>
+                    <div class="gradient-controls">
+                        <input type="color" id="iconColorStart" value="#ffffff">
+                        <input type="color" id="iconColorEnd" value="#e6e6e6">
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>Icon Size</label>
+                <input type="range" id="iconSize" min="20" max="80" value="48">
+            </div>
+
+            <div class="control-group">
+                <label>Select Icon</label>
+                <div class="icon-picker" id="iconPicker">
+                    <!-- Icons will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>
+                    Custom Icon HTML
+                    <span class="info-wrapper">
+                        <i class="fas fa-info-circle tooltip-icon"></i>
+                        <span class="tooltip">
+                            You can find more icons at <a href="https://fontawesome.com/icons" target="_blank">fontawesome.com</a>. Use the HTML format: 
+                            <code>&lt;i class='fa-solid fa-icon-name'&gt;&lt;/i&gt;</code>
+                        </span>
+                    </span>
+                </label>
+                <input type="text" id="iconInput" placeholder='<i class="fa-solid fa-chart-bar"></i>'>
+            </div>
+
+            <button id="download">Download Icon</button>
+        </div>
+        <div class="preview">
+            <div class="icon-preview" id="iconPreview">
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="disclaimer">icons.byalex.gg is not affiliated with Discord.</p>
+            <div class="footer-links">
+                <a href="https://github.com/yourusername/discord-role-icon-maker" target="_blank" rel="noopener">
+                    <i class="fab fa-github"></i> Open Source
+                </a>
+                <a href="https://ko-fi.com/yourusername" target="_blank" rel="noopener">
+                    <i class="fas fa-mug-hot"></i> Support the Project
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
